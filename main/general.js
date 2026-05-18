@@ -1,3 +1,5 @@
+
+    
     // Scroll effect
     window.addEventListener('scroll', () => {
       const header = document.querySelector('header');
