@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Главная</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+
+  <!-- GLOW BLOBS -->
+  <div class="blob-left"></div>
+  <div class="blob-right"></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+
+      <!-- LOGO -->
+      <a href="#" class="logo">
+        <div class="logo-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <span class="logo-text">CharSize</span>
+      </a>
+
+      <!-- NAV -->
+      <nav>
+        <a href="#" class="nav-item active">Главная</a>
+        <a href="#" class="nav-item">Каталог</a>
+        <a href="#" class="nav-item">О нас</a>
+        <a href="#" class="nav-item">Блог</a>
+        <a href="#" class="nav-item">Контакты</a>
+      </nav>
+
+      <!-- RIGHT SIDE -->
+      <div class="header-right">
+
+        <!-- SEARCH -->
+        <div class="search-wrapper" id="searchWrapper">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2" />
+            <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <input
+            class="search-input"
+            id="searchInput"
+            type="text"
+            placeholder="Поиск..."
+          />
+        </div>
+
+        <!-- NOTIFICATION BUTTON -->
+        <button class="icon-btn">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M13.73 21a2 2 0 0 1-3.46 0"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span class="badge"></span>
+        </button>
+
+        <!-- DIVIDER -->
+        <div class="divider"></div>
+
+        <!-- AVATAR -->
+        <button class="avatar">АИ</button>
+
+        <!-- MOBILE BURGER -->
+        <button class="burger" id="burgerBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M3 12h18M3 6h18M3 18h18"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- BOTTOM ACCENT LINE -->
+    <div class="header-accent-line"></div>
+  </header>
+
+  <!-- SPACER -->
+  <div style="height: 68px;"></div>
+
+  <!-- PAGE CONTENT -->
+  <main>
+    <h1>Каталог</h1>
+  </main>
+
+<footer></footer>
+<script src="./general.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+/* ===== СТРАНИЦА ===== */
+body {
+  background: linear-gradient(135deg, #0a0e1a 0%, #0d1230 40%, #1a0a2e 100%);
+  min-height: 100vh;
+}
+
+/* ===== GLOW BLOBS ===== */
+.blob-left {
+  position: fixed;
+  top: -60px;
+  left: 15%;
+  width: 320px;
+  height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(99,102,241,0.35) 0%, transparent 70%);
+  filter: blur(32px);
+  pointer-events: none;
+  z-index: 49;
+}
+
+.blob-right {
+  position: fixed;
+  top: -40px;
+  right: 10%;
+  width: 260px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(168,85,247,0.28) 0%, transparent 70%);
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 49;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.4s ease;
+  background: rgba(10, 14, 26, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  box-shadow: none;
+}
+
+header.scrolled {
+  background: rgba(10, 14, 26, 0.75);
+  border-bottom: 1px solid rgba(99,102,241,0.25);
+  box-shadow: 0 4px 40px rgba(99,102,241,0.12),
+              0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* ===== HEADER INNER CONTAINER ===== */
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* ===== HEADER BOTTOM ACCENT LINE ===== */
+.header-accent-line {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99,102,241,0.6),
+    rgba(168,85,247,0.6),
+    transparent
+  );
+  transition: width 0.6s ease;
+}
+
+header.scrolled .header-accent-line {
+  width: 60%;
+}
+
+/* ===== LOGO LINK ===== */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+/* ===== LOGO ICON ===== */
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(99,102,241,0.55);
+  flex-shrink: 0;
+}
+
+/* ===== LOGO TEXT ===== */
+.logo-text {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+  background: linear-gradient(90deg, #c7d2fe, #e9d5ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: system-ui, sans-serif;
+}
+
+/* ===== NAV ===== */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 40px;
+  flex: 1;
+}
+
+/* ===== NAV ITEM ===== */
+.nav-item {
+  position: relative;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(148,163,184,0.8);
+  background: transparent;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  font-family: system-ui, sans-serif;
+  letter-spacing: 0.01em;
+  box-shadow: none;
+}
+
+.nav-item:hover {
+  color: rgba(199,210,254,0.85);
+  background: rgba(99,102,241,0.07);
+}
+
+.nav-item.active {
+  font-weight: 600;
+  color: rgba(199,210,254,1);
+  background: rgba(99,102,241,0.15);
+  border: 1px solid rgba(99,102,241,0.25);
+  box-shadow: 0 0 12px rgba(99,102,241,0.2);
+}
+
+/* ===== NAV ITEM ACTIVE UNDERLINE ===== */
+.nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 25%;
+  right: 25%;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  box-shadow: 0 0 6px rgba(99,102,241,0.8);
+}
+
+/* ===== RIGHT SIDE ===== */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== SEARCH WRAPPER ===== */
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 6px 10px;
+  transition: all 0.3s ease;
+  width: 36px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.search-wrapper.open {
+  background: rgba(99,102,241,0.12);
+  border: 1px solid rgba(99,102,241,0.4);
+  width: 200px;
+}
+
+.search-icon {
+  flex-shrink: 0;
+  color: rgba(167,139,250,0.8);
+}
+
+/* ===== SEARCH INPUT ===== */
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: rgba(220,214,254,0.9);
+  font-size: 13px;
+  width: 100%;
+  font-family: system-ui, sans-serif;
+}
+
+.search-input::placeholder {
+  color: rgba(148,163,184,0.5);
+}
+
+/* ===== ICON BUTTON ===== */
+.icon-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(148,163,184,0.7);
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: rgba(99,102,241,0.15);
+  border-color: rgba(99,102,241,0.3);
+  color: rgba(167,139,250,1);
+}
+
+/* ===== BADGE ===== */
+.badge {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f43f5e, #ec4899);
+  border: 1.5px solid rgba(10,14,26,0.9);
+  box-shadow: 0 0 6px rgba(244,63,94,0.6);
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  width: 1px;
+  height: 24px;
+  background: rgba(255,255,255,0.1);
+  margin: 0 4px;
+}
+
+/* ===== AVATAR ===== */
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  border: 2px solid rgba(167,139,250,0.4);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+  box-shadow: 0 0 12px rgba(99,102,241,0.4);
+  transition: box-shadow 0.2s;
+  font-family: system-ui, sans-serif;
+}
+
+.avatar:hover {
+  box-shadow: 0 0 20px rgba(99,102,241,0.65);
+}
+
+/* ===== MOBILE BURGER ===== */
+.burger {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.2);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: rgba(167,139,250,0.9);
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+  nav {
+    display: none;
+  }
+  .search-wrapper {
+    display: none;
+  }
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

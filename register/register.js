@@ -1,3 +1,7 @@
+document.querySelector(".btn-primary").addEventListener('click', () => {
+  window.location.href = '../main/general.html';
+}
+)
 document.querySelectorAll(".tab-btn").forEach(function (btn) {
   btn.addEventListener("click", function () {
     var tab = this.dataset.tab;
